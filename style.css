@@ -65,6 +65,57 @@ h1 {
   animation: typing 3s steps(20), blink .75s step-end infinite;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+nav a {
+  font-size: 1.1rem;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+nav.mobile {
+  display: none;
+  flex-direction: column;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+nav.mobile a {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+nav.show {
+  display: flex !important;
+}
+
 section {
   padding: 3rem 1rem;
   max-width: 800px;
@@ -95,13 +146,54 @@ footer {
 }
 
 /* === Responsive === */
-@media (max-width: 600px) {
-  h1 { font-size: 1.8rem; }
-  section { padding: 2rem 1rem; }
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+  nav.desktop {
+    display: none;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .typewriter {
+    font-size: 1rem;
+  }
   .theme-toggle {
     top: 0.5rem;
     right: 0.5rem;
   }
+  section {
+    padding: 2rem 1rem;
+  }
+  ul {
+    padding-left: 1rem;
+  }
+  ul li {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+  p, a {
+    font-size: 0.95rem;
+    word-wrap: break-word;
+  }
 }
 
-
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  .typewriter {
+    font-size: 0.9rem;
+  }
+  ul li {
+    font-size: 0.9rem;
+  }
+  .theme-toggle button {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+  section {
+    padding: 1.5rem 0.5rem;
+  }
+}

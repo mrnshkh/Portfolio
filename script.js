@@ -26,3 +26,7 @@ gsap.from(".gsap-bounce", {
   ease: "bounce",
   stagger: 0.3
 });
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("show");
+}
+
